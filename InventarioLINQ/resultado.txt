@@ -1,15 +1,15 @@
 === RESULTADOS DEL INVENTARIO ===
 
 1️⃣ Productos con stock menor a 10:
-Azúcar - Stock: 8
-Panadería - Stock: 5
+AzÃºcar - Stock: 8
+PanaderÃ­a - Stock: 5
 
 2️⃣ Productos ordenados por precio:
 Leche - Q1075
 Jugo - Q800
-Azúcar - Q650
+AzÃºcar - Q650
 Arroz - Q525
-Panadería - Q425
+PanaderÃ­a - Q425
 
 3️⃣ Valor total del inventario: Q43550,00
 
@@ -17,13 +17,13 @@ Panadería - Q425
 
 Categoría: Granos
   - Arroz (Stock 20, Q525)
-  - Azúcar (Stock 8, Q650)
+  - AzÃºcar (Stock 8, Q650)
 
-Categoría: Lácteos
+Categoría: LÃ¡cteos
   - Leche (Stock 15, Q1075)
 
 Categoría: Pan
-  - Panadería (Stock 5, Q425)
+  - PanaderÃ­a (Stock 5, Q425)
 
 Categoría: Bebidas
   - Jugo (Stock 12, Q800)

@@ -8,8 +8,8 @@ namespace InventarioLINQ
     class Producto
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Categoria { get; set; }
+        public string Nombre { get; set; } = "";
+        public string Categoria { get; set; } = "";
         public double Precio { get; set; }
         public int Stock { get; set; }
     }
@@ -37,8 +37,10 @@ namespace InventarioLINQ
             Console.WriteLine("=== Inventario Cargado ===\n");
             Console.WriteLine("Productos con stock menor a 10:");
             bajoStock.ForEach(p => Console.WriteLine($"{p.Nombre} - Stock: {p.Stock}"));
+
             Console.WriteLine("\nProductos ordenados por precio:");
             ordenadosPrecio.ForEach(p => Console.WriteLine($"{p.Nombre} - Q{p.Precio}"));
+
             Console.WriteLine($"\nValor total del inventario: Q{totalInventario:F2}\n");
 
             Console.WriteLine("Productos agrupados por categoría:");
@@ -51,7 +53,7 @@ namespace InventarioLINQ
 
             // EXPORTAR RESULTADOS
             ExportarResultados("resultado.txt", bajoStock, ordenadosPrecio, totalInventario, agrupados);
-            Console.WriteLine("\ns Resultados exportados a 'resultado.txt'");
+            Console.WriteLine("\n✅ Resultados exportados a 'resultado.txt'");
         }
 
         static List<Producto> CargarProductos(string ruta)
@@ -59,7 +61,7 @@ namespace InventarioLINQ
             var productos = new List<Producto>();
             if (!File.Exists(ruta)) return productos;
 
-            var lineas = File.ReadAllLines(ruta).Skip(1);
+            var lineas = File.ReadAllLines(ruta, System.Text.Encoding.Latin1).Skip(1);
             foreach (var linea in lineas)
             {
                 var partes = linea.Split(',');
@@ -86,13 +88,17 @@ namespace InventarioLINQ
             using (StreamWriter sw = new StreamWriter(archivo))
             {
                 sw.WriteLine("=== RESULTADOS DEL INVENTARIO ===\n");
+
                 sw.WriteLine("1️⃣ Productos con stock menor a 10:");
                 foreach (var p in bajoStock)
                     sw.WriteLine($"{p.Nombre} - Stock: {p.Stock}");
+
                 sw.WriteLine("\n2️⃣ Productos ordenados por precio:");
                 foreach (var p in ordenados)
                     sw.WriteLine($"{p.Nombre} - Q{p.Precio}");
+
                 sw.WriteLine($"\n3️⃣ Valor total del inventario: Q{total:F2}\n");
+
                 sw.WriteLine("4️⃣ Agrupados por categoría:");
                 foreach (var grupo in agrupados)
                 {

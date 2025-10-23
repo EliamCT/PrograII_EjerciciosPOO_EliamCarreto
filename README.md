@@ -1,7 +1,7 @@
 # Ejercicios de Programación II – POO y LINQ  
 **Autor:** Eliam Carreto  
 **Carrera:** Ingeniería en Sistemas  
-**Universidad:** [Agrega el nombre si quieres]
+**Universidad:** UPANA
 
 ---
 
